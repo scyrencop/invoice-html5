@@ -17,7 +17,6 @@
 }
 
 /* content editable */
-
 *[contenteditable] {
     border-radius: 0.25em;
     min-width: 10px;
@@ -26,7 +25,6 @@
 
 *[contenteditable] {
     position: relative;
-    /* cursor: pointer; */
     cursor: text;
     padding:0;
     margin:0;
@@ -46,7 +44,6 @@ img.hover {
     margin:-6px -8px;
     box-shadow: 0 0 1em 0.5em rgba(104, 163, 219, 0.1);
     border: 1px solid #ddd;
-    /* top:-6px; */
 }
 
 span[contenteditable] {
@@ -82,15 +79,8 @@ td {
     border-width: 1px;
     padding: 0.5em;
     position: relative;
-    text-align: center;
-    
-    
+    text-align: center;   
 }
-
-/* th, td {
-    border-radius: 0.25em;
-    border-style: solid;
-} */
 
 th {
     background: #FFF;
@@ -228,28 +218,9 @@ header p{
 
 /* article */
 
-article,
-article address,
 table.meta,
 table.inventory {
     margin: 0 0 3em;
-}
-
-article:after {
-    clear: both;
-    content: "";
-    display: table;
-}
-
-article h1 {
-    clip: rect(0 0 0 0);
-    position: absolute;
-}
-
-article address {
-    float: left;
-    font-size: 80%;
-    /* font-weight: bold; */
 }
 
 .flexbox{
@@ -321,7 +292,7 @@ table.balance td {
     text-align: right;
 }
 
-/* aside */
+/* footer */
 footer{
   position: absolute;
   box-sizing: border-box;
@@ -344,36 +315,29 @@ footer div {
     font-size: 10px;
 }
 
-/* javascript */
+/* button */
 
 .add,
 .cut {
-    border-width: 1px;
     display: block;
-    font-size: 10px;
-    padding: 4px 7px;
     margin:5px;
     float: left;
     text-align: center;
-    /* width: 0.6em; */
-}
 
-.add,
-.cut {
     background: #8495A2;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 5px 10px;
     border: 1px solid #cbd1d4;
     color: #FFF;
     cursor: pointer;
+    font-size: 12px;
     font-weight: bold;
-    text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.333);
+    
     transition: 0.2s ease;
 }
 
 .add {
-    margin: -2.5em 0 0;
+    margin: -2.5em 0.5em 0;
 }
 
 .add:hover, .cut:hover {
