@@ -2,12 +2,8 @@
    var dd = today.getDate();
    var mm = today.getMonth() + 1;
 
-   if (dd < 10) {
-       dd = '0' + dd
-   }
-   if (mm < 10) {
-       mm = '0' + mm
-   }
+   if (dd < 10) { dd = '0' + dd }
+   if (mm < 10) { mm = '0' + mm }
 
    today = mm + '/' + dd + '/' + today.getFullYear();
    document.querySelector('[data-today]').innerHTML = today;
@@ -48,9 +44,7 @@
            };
    })(this, Element.prototype, Array.prototype);
 
-   /* Helper Functions
-   /* ========================================================================== */
-
+   /* Helper Functions */
    function generateTableRow() {
        var emptyColumn = document.createElement('tr');
 
@@ -70,8 +64,7 @@
        return number.toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,');
    }
 
-   /* Update Number
-   /* ========================================================================== */
+   /* Update Number */
 
    function updateNumber(e) {
        var
@@ -91,26 +84,21 @@
        updateInvoice();
    }
 
-   /* Update Invoice
-   /* ========================================================================== */
+   /* Update Invoice */
 
    function updateInvoice() {
        var total = 0;
        var cells, price, total, a, i;
 
        // update inventory cells
-       // ======================
 
        for (var a = document.querySelectorAll('table.inventory tbody tr'), i = 0; a[i]; ++i) {
            // get inventory row cells
 
-           // cells = a[i].querySelectorAll('span:first-child');
            cells = a[i].querySelectorAll('span[data-price]');
            qty = a[i].querySelectorAll('span[data-qty]');
 
-           // set price as cell[2] * cell[3]
            price = parseFloatHTML(cells[0]) * parseFloatHTML(qty[0]);
-           // price = parseFloatHTML(cells[3]) * parseFloatHTML(cells[4]);
 
            // add price to total
            total += price;
@@ -120,7 +108,6 @@
        }
 
        // update balance cells
-       // ====================
 
        // get balance cells
        cells = document.querySelectorAll('table.balance td:last-child span:first-child');
@@ -137,26 +124,21 @@
 
        document.querySelector('span.total').innerHTML = parsePrice(total);
 
-       // cells[1].innerHTML = parsePrice(total - parseFloatHTML(cells[1]));
-
        // set balance and meta balance
        cells[0].innerHTML = parsePrice(total - parseFloatHTML(cells[1]));
 
        // update prefix formatting
-       // ========================
 
        var prefix = document.querySelector('#prefix').innerHTML;
        for (a = document.querySelectorAll('[data-prefix]'), i = 0; a[i]; ++i) a[i].innerHTML = prefix;
 
        // update price formatting
-       // =======================
 
        for (a = document.querySelectorAll('span[data-price]'), i = 0; a[i]; ++i)
            if (document.activeElement != a[i]) a[i].innerHTML = parsePrice(parseFloatHTML(a[i]));
    }
 
-   /* On Content Load
-   /* ========================================================================== */
+   /* On Content Load */
 
    function onContentLoad() {
        updateInvoice();
