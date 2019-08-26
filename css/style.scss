@@ -105,8 +105,11 @@ html {
     margin: 0 auto;
     overflow: hidden;
     height: 11in;
+    height: 12in;
     padding: 0.5in;
     width: 8.5in;
+        width: 210mm;
+        height: 297mm;
     background: #FFF;
     border-radius: 1px;
     box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
@@ -275,13 +278,14 @@ table.balance td {
 }
 
 /* footer */
-footer{
+.footer{
   position: absolute;
   box-sizing: border-box;
   width:100%;
-  bottom: 0px;
+  bottom: 0;
   color: #546979;
   left:0;
+  margin-bottom: 10px;
   h1 {
       border: none;
       border-width: 0 0 1px;
