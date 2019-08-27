@@ -5,7 +5,7 @@ A modern, clean, and very simple responsive HTML invoice template, because somet
 [Find a demo here](https://scyrencop.github.io/invoice-html5/)
 
 ### Preview
-![Preview](http://i.imgur.com/C3ePdqQ.png)
+![Preview](https://i.imgur.com/CXfCiq1.png)
 
 ### Suggestions?
 Open an issue, and provide as much detail as possible.
